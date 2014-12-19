@@ -54,6 +54,7 @@ was hacked and pizza was had. Some pics of the conference are
 available on the <a href="https://www.facebook.com/media/set/?set=a.450514941665306.112810.129739647076172">Sensio Labs Facebook page</a>.</p>
 
         </div>
+        <a href="javascript:" class="comment">点击查看评论</a>
         <div id="disqus_thread"></div>
                     <p class="categories">
             Categories:
@@ -99,11 +100,14 @@ available on the <a href="https://www.facebook.com/media/set/?set=a.450514941665
             var disqus_shortname = 'a83518485'; // required: replace example with your forum shortname
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+            $(function(){
+                $('.comment').click(function(){
+                    $(this).remove();
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                });
+            });
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <script type="text/javascript">
